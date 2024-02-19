@@ -2,22 +2,27 @@ version: '3'
 
 services:
   php:
-    build: 
-      context: .infra/php
+    build:
+      context: ./
+      dockerfile: .infra/php/Dockerfile
+      args:
+        user: ${USER}
+        uid: ${UID}
     image: otaodev/php:latest
     container_name: php
     volumes:
-      - ./app:/var/www
+      - .:/var/www
     networks:
       - otaonet
 
   nginx:
     build: 
-      context: .infra/nginx
+      context: ./
+      dockerfile: .infra/nginx/Dockerfile
     image: otaodev/nginx:latest
     container_name: nginx
     volumes:
-      - ./app/public:/var/www/public:delegated
+      - ./public:/var/www/public:delegated
     networks:
       - otaonet
     ports:
