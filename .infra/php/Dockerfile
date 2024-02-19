@@ -36,6 +36,8 @@ RUN pecl install -o -f xdebug \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable xdebug
 
+COPY .infra/php/xdebug.ini /usr/local/etc/php/conf.d
+
 RUN useradd -G root -u $uid -d /home/$user $user
 
 WORKDIR /var/www

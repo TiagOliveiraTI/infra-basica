@@ -1,3 +1,5 @@
 <?php
 
-phpinfo();
+$texto = "alguma coisa";
+
+echo $texto;
