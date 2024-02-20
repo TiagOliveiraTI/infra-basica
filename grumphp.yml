@@ -4,6 +4,10 @@ grumphp:
         enabled: true
     tasks:
         phpunit:
+
+        phpcs:
+            standard: PSR12
+            ignore_patterns: [./tests/*]
         
         git_commit_message:
             allow_empty_message: false

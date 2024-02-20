@@ -1,7 +1,6 @@
 <?php
 
 use GuzzleHttp\Client;
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\TestCase;
 
